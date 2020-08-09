@@ -316,7 +316,7 @@ if __name__ == '__main__':
     parser.add_argument('--nepoch', type=int, default=100000, help='number of epochs to train for')
     parser.add_argument('--conf', type=str, default='setup.conf')
     parser.add_argument('--expname', type=str, default='single_shape')
-    parser.add_argument('--gpu', type=str, default='2', help='GPU to use [default: GPU auto]')
+    parser.add_argument('--gpu', type=str, default='auto', help='GPU to use [default: GPU auto]')
     parser.add_argument('--is_continue', default=False, action="store_true", help='continue')
     parser.add_argument('--timestamp', default='latest', type=str)
     parser.add_argument('--checkpoint', default='latest', type=str)
