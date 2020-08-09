@@ -175,7 +175,6 @@ class ReconstructionRunner:
 
         self.exps_folder_name = 'exps'
 
-        utils.mkdir_ifnotexists(utils.concat_home_dir(os.path.join(self.home_dir, self.exps_folder_name)))
 
         self.input_file = self.conf.get_string('train.input_path')
         self.data = utils.load_point_cloud_by_file_extension(self.input_file)
@@ -190,7 +189,7 @@ class ReconstructionRunner:
         sigmas = np.concatenate(sigma_set)
         self.local_sigma = torch.from_numpy(sigmas).float().cuda()
 
-        self.expdir = utils.concat_home_dir(os.path.join(self.home_dir, self.exps_folder_name, self.expname))
+        self.expdir = os.path.join(self.home_dir, self.exps_folder_name, self.expname)
         utils.mkdir_ifnotexists(self.expdir)
 
         if is_continue:

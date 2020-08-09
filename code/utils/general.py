@@ -7,7 +7,7 @@ import trimesh
 
 def mkdir_ifnotexists(directory):
     if not os.path.exists(directory):
-        os.mkdir(directory)
+        os.makedirs(directory)
 
 
 def as_mesh(scene_or_mesh):
