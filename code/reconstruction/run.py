@@ -40,7 +40,7 @@ class ReconstructionRunner:
 
         for epoch in range(self.startepoch, self.nepochs + 1):
 
-            indices = torch.tensor(np.random.choice(self.data.shape[0], self.points_batch, False))
+            indices = torch.LongTensor(np.random.choice(self.data.shape[0], self.points_batch, False))
 
             cur_data = self.data[indices]
 
@@ -111,7 +111,7 @@ class ReconstructionRunner:
             if not path:
                 path = self.plots_dir
 
-            indices = torch.tensor(np.random.choice(self.data.shape[0], self.points_batch, False))
+            indices = torch.LongTensor(np.random.choice(self.data.shape[0], self.points_batch, False))
 
             pnts = self.data[indices, :3]
 
